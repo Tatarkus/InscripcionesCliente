@@ -5,15 +5,6 @@
  */
 package inscripcionescliente;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
-
 
 /**
  *
@@ -27,8 +18,13 @@ public class InscripcionesCliente {
     public static void main(String[] args) {
        
        NewJerseyClient jc = new NewJerseyClient();
-       String json = jc.getJson();  
-       ControladorAlumno alumnos = new ControladorAlumno(json);   
-       alumnos.imprimirLista();
+       try{
+        String json = jc.getJson();  
+        ControladorAlumno alumnos = new ControladorAlumno(json);   
+        alumnos.imprimirLista();
+       }catch(Exception e){
+        System.out.println("ERROR: No se puedo conectar a la API!");
+       }
+       
     }        
 }
