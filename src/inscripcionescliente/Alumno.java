@@ -15,7 +15,7 @@ public class Alumno  implements java.io.Serializable {
      private String nombre;
      private String apPaterno;
      private String apMaterno;
-     private Date fecNac;
+     private String fecNac;
      private String sexo;
      private String correo;
      private String comuna;
@@ -23,7 +23,7 @@ public class Alumno  implements java.io.Serializable {
     public Alumno() {
     }
 
-    public Alumno(int run, String dv, String nombre, String apPaterno, String apMaterno, Date fecNac, String sexo, String correo, String comuna) {
+    public Alumno(int run, String dv, String nombre, String apPaterno, String apMaterno, String fecNac, String sexo, String correo, String comuna) {
        this.run = run;
        this.dv = dv;
        this.nombre = nombre;
@@ -34,72 +34,13 @@ public class Alumno  implements java.io.Serializable {
        this.correo = correo;
        this.comuna = comuna;
     }
+    
+    public void imprimirAlumno(){
+        String formato = "| %-9s |  %-1s   |   %-11s|  %-11s  |  %-10s   | %-12s |%-10s| %-29s|  %-13s |%n";
+        System.out.format(formato, String.valueOf(run),dv,nombre,apPaterno,apMaterno,fecNac,sexo,correo,comuna);
+
+    }
    
-    public int getRun() {
-        return this.run;
-    }
-    
-    public void setRun(int run) {
-        this.run = run;
-    }
-    public String getDv() {
-        return this.dv;
-    }
-    
-    public void setDv(String dv) {
-        this.dv = dv;
-    }
-    public String getNombre() {
-        return this.nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getApPaterno() {
-        return this.apPaterno;
-    }
-    
-    public void setApPaterno(String apPaterno) {
-        this.apPaterno = apPaterno;
-    }
-    public String getApMaterno() {
-        return this.apMaterno;
-    }
-    
-    public void setApMaterno(String apMaterno) {
-        this.apMaterno = apMaterno;
-    }
-    public Date getFecNac() {
-        return this.fecNac;
-    }
-    
-    public void setFecNac(Date fecNac) {
-        this.fecNac = fecNac;
-    }
-    public String getSexo() {
-        return this.sexo;
-    }
-    
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-    public String getCorreo() {
-        return this.correo;
-    }
-    
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-    public String getComuna() {
-        return this.comuna;
-    }
-    
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
-    }
-
-
 
 
 }
