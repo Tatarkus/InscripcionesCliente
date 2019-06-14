@@ -28,20 +28,7 @@ public class InscripcionesCliente {
        
        NewJerseyClient jc = new NewJerseyClient();
        String json = jc.getJson();  
-       ControladorAlumno alumnos = new ControladorAlumno(json);
-       
+       ControladorAlumno alumnos = new ControladorAlumno(json);   
        alumnos.imprimirLista();
-        
-    }
-    
-    
-        
-   public void imprimirTabla(){
-       
-       
-       
-   }
-            
-    
+    }        
 }
-
