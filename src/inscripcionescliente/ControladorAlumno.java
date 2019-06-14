@@ -22,19 +22,19 @@ public class ControladorAlumno {
        alumnos = new ArrayList<Alumno>();
        //https://stackoverflow.com/questions/5554217/google-gson-deserialize-listclass-object-generic-type
        //Es un truco para poder parsear el json a un tipo de dato "<List>Alumno".
-       Type listType = new TypeToken<ArrayList<Alumno>>(){}.getType();
-       alumnos = new Gson().fromJson(json, listType);
+       Type tipo_lista_alumnos = new TypeToken<ArrayList<Alumno>>(){}.getType();
+       alumnos = new Gson().fromJson(json, tipo_lista_alumnos);
    }
    
    public void imprimirLista(){
        
-       System.out.format("+-----------+------+--------------+---------------+---------------+--------------+----------+------------------------------+----------------+%n");
-       System.out.format("|    RUT    |  DV  |    Nombre    |   ApellidoP   |   ApellidoM   |   FechaNac   |   Sexo   |            Correo            |     Comuna     |%n");
-       System.out.format("+-----------+------+--------------+---------------+---------------+--------------+----------+------------------------------+----------------+%n");
+       System.out.format("+-----------+------+-----------------+---------------+---------------+--------------+----------+------------------------------+----------------+%n");
+       System.out.format("|    RUT    |  DV  |      Nombre     |   ApellidoP   |   ApellidoM   |   FechaNac   |   Sexo   |            Correo            |     Comuna     |%n");
+       System.out.format("+-----------+------+-----------------+---------------+---------------+--------------+----------+------------------------------+----------------+%n");
        
        for (Alumno alumno : alumnos) {
            alumno.imprimirAlumno();
-       System.out.format("+-----------+------+--------------+---------------+---------------+--------------+----------+------------------------------+----------------+%n");
+       System.out.format("+-----------+------+-----------------+---------------+---------------+--------------+----------+------------------------------+----------------+%n");
        }
    }
     

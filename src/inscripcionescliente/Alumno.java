@@ -36,7 +36,7 @@ public class Alumno  implements java.io.Serializable {
     }
     
     public void imprimirAlumno(){
-        String formato = "| %-9s |  %-1s   |   %-11s|  %-11s  |  %-10s   | %-12s |%-10s| %-29s|  %-13s |%n";
+        String formato = "| %-9s |  %-1s   |   %-14s|  %-11s  |  %-10s   | %-12s |%-10s| %-29s|  %-13s |%n";
         System.out.format(formato, String.valueOf(run),dv,nombre,apPaterno,apMaterno,fecNac,sexo,correo,comuna);
 
     }
