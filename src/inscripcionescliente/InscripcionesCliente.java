@@ -6,11 +6,14 @@
 package inscripcionescliente;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.Iterator;
 import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
 
 
 
@@ -34,32 +37,29 @@ public class InscripcionesCliente {
     
     
         
-   
-    public static void mostrarAlumnos(String alumnos){
-        JSONParser parser = new JSONParser();
-        Gson gson = new Gson();
-        try{
+   public static void mostrarAlumnos(String json){
+       
+       Gson gson = new Gson();
+       JSONParser parser = new JSONParser();
+       
+       ControladorAlumno alumnos = new ControladorAlumno();
+       
+       try{
+       
            
-            Object obj = parser.parse(alumnos);
-            
-            JSONArray array = (JSONArray) obj;
-            
-            //List<Alumno> al = gson.fromJson(alumnos, List<Alumno.class>);
-            
-            for(Iterator iterator = array.iterator(); iterator.hasNext();){
-               
-                Object next = iterator.next();
-                JSONObject json = (JS) next;
-                System.out.println(json.get("run")+"-"+json.get("dv"));
-                
-            }
-        }catch(Exception e){
-            System.out.println("Error: "+e.getMessage());
-                
-        }
-        
-        
-    }
+           alumnos=gson.fromJson(json,ControladorAlumno.class);
+           System.out.println("asd");
+           System.out.println(alumnos);
+           if(alumnos != null){
+               for(Alumno a : alumnos.getAlumnos()){
+                   System.out.println(a.getApMaterno());
+               }
+           }
+       }catch(Exception e){
+           
+       }
+       
+   }
             
     
 }
